@@ -20,8 +20,21 @@ namespace MignoneMaratona
         Maratone maratone;
         public MainWindow()
         {
-            maratone = new Maratone();
             InitializeComponent();
+            maratone = new Maratone();
+            DgVisualizza.ItemsSource = maratone.ElencoMaratona;
+        }
+
+        private void BtnCaricaDati_Click(object sender, RoutedEventArgs e)
+        {
+            maratone.LeggiDati();
+            DgVisualizza.Items.Refresh();
+        }
+
+        private void BtnVerificaPresenza_Click(object sender, RoutedEventArgs e)
+        {
+            string citta = txtcitta.Text;
+            lblcittàsrc.Content = maratone.Verificacitta(citta);
         }
     }
 }

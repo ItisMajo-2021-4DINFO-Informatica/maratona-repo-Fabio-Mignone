@@ -44,6 +44,31 @@ namespace MignoneMaratona
                     }
                 }
             }
-        } 
+        }
+        
+        public string Verificacitta(string citta)
+        {   
+            string output = string.Empty;
+            int index = 0;
+            foreach(var lista in ElencoMaratona)
+            {
+                if(citta == lista.CittàMaratona)
+                {
+                    index++;
+                    string temp = string.Empty;
+                    for(int a = 0; a<= index; a++)
+                    {
+                        temp = lista.NomeAtleta;
+                        output = string.Join(" ", temp);
+                    }
+                    return output;
+                }
+                else
+                {
+                    return output = "Ricerca fallita prova ad inserire una città valida";
+                }
+            }
+            return null;
+        }
     }
 }
