@@ -10,7 +10,7 @@ namespace MignoneMaratona
     {
         public string NomeAtleta { get; set; }
         public string Società { get; set; }
-        public int TempoImpiegato { get; set; }
+        public string TempoImpiegato { get; set; }
         public string CittàMaratona { get; set; }
     }
 }
