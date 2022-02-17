@@ -49,26 +49,28 @@ namespace MignoneMaratona
         public string Verificacitta(string citta)
         {   
             string output = string.Empty;
-            int index = 0;
             foreach(var lista in ElencoMaratona)
             {
                 if(citta == lista.CittàMaratona)
                 {
-                    index++;
-                    string temp = string.Empty;
-                    for(int a = 0; a<= index; a++)
-                    {
-                        temp = lista.NomeAtleta;
-                        output = string.Join(" ", temp);
-                    }
-                    return output;
-                }
-                else
-                {
-                    return output = "Ricerca fallita prova ad inserire una città valida";
+                    output += $" {lista.NomeAtleta}";   
                 }
             }
-            return null;
+            if (output.Length < 1)
+            {
+                output = "Ricerca fallita prova ad inserire una città valida";
+            }
+            return output;
+        }
+
+
+        public string ConversioneInMinuti(string tempoinhm)
+        {
+            int MinutiFinali = 0;
+            int Minuti = int.Parse(tempoinhm.Substring(0, 2));
+            int Ore = int.Parse(tempoinhm.Substring(4, 2));
+            MinutiFinali = (Ore * 60) + Minuti;
+            return (MinutiFinali).ToString();
         }
     }
 }
