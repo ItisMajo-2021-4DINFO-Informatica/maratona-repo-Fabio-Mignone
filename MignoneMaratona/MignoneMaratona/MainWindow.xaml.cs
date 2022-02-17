@@ -36,5 +36,11 @@ namespace MignoneMaratona
             string citta = txtcitta.Text;
             lblcittàsrc.Content = maratone.Verificacitta(citta);
         }
+
+        private void CercaDurata_Click(object sender, RoutedEventArgs e)
+        {
+            string durata = maratone.CercaDurataCorsa(atletapercerca.Text , cittapercerca.Text);
+            lbldurata.Content = durata;
+        }
     }
 }

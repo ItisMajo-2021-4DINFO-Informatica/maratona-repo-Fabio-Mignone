@@ -45,15 +45,15 @@ namespace MignoneMaratona
                 }
             }
         }
-        
+
         public string Verificacitta(string citta)
-        {   
+        {
             string output = string.Empty;
-            foreach(var lista in ElencoMaratona)
+            foreach (var lista in ElencoMaratona)
             {
-                if(citta == lista.CittàMaratona)
+                if (citta == lista.CittàMaratona)
                 {
-                    output += $" {lista.NomeAtleta}";   
+                    output += $" {lista.NomeAtleta}";
                 }
             }
             if (output.Length < 1)
@@ -67,10 +67,23 @@ namespace MignoneMaratona
         public string ConversioneInMinuti(string tempoinhm)
         {
             int MinutiFinali = 0;
-            int Minuti = int.Parse(tempoinhm.Substring(0, 2));
-            int Ore = int.Parse(tempoinhm.Substring(4, 2));
+            int Minuti = int.Parse(tempoinhm.Substring(3, 2));
+            int Ore = int.Parse(tempoinhm.Substring(0, 2));
             MinutiFinali = (Ore * 60) + Minuti;
             return (MinutiFinali).ToString();
+        }
+
+        public string CercaDurataCorsa(string TxTNome , string TxTCitta)
+        {
+            string output = string.Empty;
+            foreach ( Maratona NomeAtleta in ElencoMaratona)
+            {
+                if (NomeAtleta.NomeAtleta == TxTNome && NomeAtleta.CittàMaratona == TxTCitta)
+                {
+                    output = ($"L'atleta: {NomeAtleta.NomeAtleta} durante la gara svolta a {NomeAtleta.CittàMaratona} ha corso per {ConversioneInMinuti(NomeAtleta.TempoImpiegato)}");
+                }
+            }
+            return output = output.Length < 1 ? "Nessun Atleta corrispondente" : output;
         }
     }
 }

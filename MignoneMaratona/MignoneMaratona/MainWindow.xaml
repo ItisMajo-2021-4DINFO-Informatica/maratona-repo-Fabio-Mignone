@@ -5,13 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MignoneMaratona"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="465" Width="799">
+    <Grid Margin="0,0,0,-6">
         <DataGrid x:Name="DgVisualizza" Margin="10,36,400,181"/>
         <Button x:Name="BtnCaricaDati" Content="Carica Dati Dall'Archivio" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="21" Width="390" Click="BtnCaricaDati_Click"/>
         <Button x:Name="BtnVerificaPartecipanti" Content="Cerca in questa città" HorizontalAlignment="Left" Margin="630,36,0,0" VerticalAlignment="Top" Height="29" Width="160" Click="BtnVerificaPresenza_Click"/>
         <TextBox x:Name="txtcitta" HorizontalAlignment="Left" Margin="455,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Height="29"/>
         <Label Content="Città: " HorizontalAlignment="Left" Margin="405,36,0,0" VerticalAlignment="Top" Height="29" Width="50"/>
-        <Label x:Name="lblcittàsrc" Content="" HorizontalAlignment="Left" Margin="10,258,0,0" VerticalAlignment="Top" Width="390"/>
+        <Label x:Name="lblcittàsrc" Content="" HorizontalAlignment="Left" Margin="10,279,0,0" VerticalAlignment="Top" Width="390"/>
+        <Label Content="Nome Atleta: " HorizontalAlignment="Left" Margin="405,81,0,0" VerticalAlignment="Top"/>
+        <Label Content="Nome Citta: " HorizontalAlignment="Left" Margin="405,112,0,0" VerticalAlignment="Top"/>
+        <Label  x:Name="lbldurata" Content="" HorizontalAlignment="Left" Margin="9,314,0,0" VerticalAlignment="Top" Height="25" Width="390"/>
+        <TextBox x:Name="atletapercerca" HorizontalAlignment="Left" Margin="493,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Height="29"/>
+        <TextBox x:Name="cittapercerca" HorizontalAlignment="Left" Margin="493,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" Height="29"/>
+        <Button x:Name="CercaDurata" Content="Cerca in questa città" HorizontalAlignment="Left" Margin="668,81,0,0" VerticalAlignment="Top" Height="60" Width="122" Click="CercaDurata_Click"/>
     </Grid>
 </Window>
